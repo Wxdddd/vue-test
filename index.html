@@ -9,6 +9,9 @@
             <div v-text="message1">
                 <!-- {{message1}} -->
             </div>
+            <div v-html="message2">
+                <!-- {{message1}} -->
+            </div>
         </div>
     </body>
     <script>
@@ -16,11 +19,13 @@
         const {createApp} = Vue
         const message = "hello winn"
         const message1 = "hello yamei"
+        const message2 = "<div> hello yamei2</div>"
         const app = {
             setup() {
                 return {
                     message,
-                    message1
+                    message1,
+                    message2
                 }
             }
         }
