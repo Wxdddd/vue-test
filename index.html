@@ -6,10 +6,10 @@
     <body>
         <div id="app">
             {{message}}
-            <div v-text="message1">
+            <div v-text="message1 + '123'">
                 <!-- {{message1}} -->
             </div>
-            <div v-html="message2">
+            <div v-html="message2 ? 1 : 2">
                 <!-- {{message1}} -->
             </div>
             <a v-bind:href="url">点击1</a> <br/>
