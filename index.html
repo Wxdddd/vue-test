@@ -12,6 +12,9 @@
             <div v-html="message2">
                 <!-- {{message1}} -->
             </div>
+            <a v-bind:href="url">点击1</a> <br/>
+            <a v-bind:[attr]="url">点击2</a> <br/>
+            <a v-bind:[attr2+'f']="url">点击3</a>
         </div>
     </body>
     <script>
@@ -20,12 +23,16 @@
         const message = "hello winn"
         const message1 = "hello yamei"
         const message2 = "<div> hello yamei2</div>"
+        const url = "http://baidu.com"
+        const attr = "href"
+        const attr2 = "hre"
         const app = {
             setup() {
                 return {
                     message,
                     message1,
-                    message2
+                    message2,
+                    url,attr,attr2
                 }
             }
         }
