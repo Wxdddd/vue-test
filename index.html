@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="vue.rc.10.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{message}}
+        </div>
+    </body>
+    <script>
+        // es6结构赋值
+        const {createApp} = Vue
+        const message = "hello winn"
+        const app = {
+            setup() {
+                return {
+                    message
+                }
+            }
+        }
+        // 挂载到id为app的dom节点上
+        createApp(app).mount('#app')
+    </script>
+    <style>
+    </style>
+</html>
