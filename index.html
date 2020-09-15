@@ -1,20 +1,26 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
         <script src="vue.rc.10.js"></script>
     </head>
     <body>
         <div id="app">
             {{message}}
+            <div v-text="message1">
+                <!-- {{message1}} -->
+            </div>
         </div>
     </body>
     <script>
         // es6结构赋值
         const {createApp} = Vue
         const message = "hello winn"
+        const message1 = "hello yamei"
         const app = {
             setup() {
                 return {
-                    message
+                    message,
+                    message1
                 }
             }
         }
