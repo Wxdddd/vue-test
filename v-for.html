@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+        <script src="vue.rc.10.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <!-- 遍历数组/集合 -->
+                <li v-for="item,index in titles">{{item}{{index}}</li>
+                <!-- 遍历对象 -->
+                <li v-for="(value,key,index) of book">{{key}}:{{value}}:{{index}}</li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        // es6结构赋值
+        const {createApp} = Vue
+        const titles = ["七秀", "长歌", "藏剑"]
+        const app = {
+            setup() {
+                return {
+                    titles,
+                    book: {
+                        title: '百年孤独',
+                        author: '马尔克斯',
+                        pubdate: '2000'
+                    }
+                }
+            }
+        }
+        // 挂载到id为app的dom节点上
+        createApp(app).mount('#app')
+    </script>
+    <style>
+    </style>
+</html>
