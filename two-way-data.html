@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+        <script src="vue.rc.10.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <input v-model="age" type="text" />
+                <button @click="onClick">提交</button>
+                <div>{{number}}</div>
+                <button @click="onIncrement">+1</button>
+            </ul>
+        </div>
+    </body>
+    <script>
+        // es6结构赋值
+        const {createApp, ref, reactive} = Vue
+        // ref建议接收参数，reactive建议接收对象。
+        const age = ref(18)
+        const profile = reactive({
+            age: 18
+        })
+        console.log(age)
+        // {
+        //     value: 18
+        // }
+        const number = ref(2)
+        const app = {
+            setup() {
+                /**
+                 *  双向数据绑定  
+                 */
+                function onClick(event) {
+                    alert(age.value)
+                }
+
+                /**
+                 *  单向数据绑定  
+                 */
+                function onIncrement() {
+                    number.value++
+                    console.log(number.value)
+                }
+
+                return {
+                    age,
+                    onClick,
+                    number,
+                    onIncrement
+                }
+            }
+        }
+        // 挂载到id为app的dom节点上
+        createApp(app).mount('#app')
+    </script>
+    <style>
+    </style>
+</html>
